@@ -7,7 +7,7 @@ The DataRole API Client Library enables you to work with DataRole APIs on your s
 * [PHP 5.4.0 or higher](http://www.php.net/)
 
 ## Developer Documentation ##
-http://api.datarole.com/developers/php
+http://developers.datarole.com/api
 
 ## Installation ##
 
@@ -62,10 +62,10 @@ require_once 'vendor/autoload.php';
 $client = new DataRole\API\Client([
     'authorization' => <YOUR_API_KEY_HERE>,
     'instance'      => 'default',
-    'version'       => 1,
+    'version'       => 'v1',
 ]);
 
-$client->permit(['Region' => 'CA_LosAngeles'])->preview();
+$client->permit(['Region' => 'CA_Concord'])->preview();
 ```
 
 ## Frequently Asked Questions ##
@@ -74,7 +74,7 @@ $client->permit(['Region' => 'CA_LosAngeles'])->preview();
 
 For support with the library the best place to ask is via the datarole-api-php-client tag on StackOverflow: http://stackoverflow.com/questions/tagged/datarole-api-php-client
 
-If there is a specific bug with the library, please file a issue in the Github issues tracker, including a (minimal) example of the failing code and any specific errors retrieved.
+If there is a specific bug with the library, please file an issue in the Github issues tracker, including a (minimal) example of the failing code and any specific errors retrieved.
 
 ### How do I contribute? ###
 
