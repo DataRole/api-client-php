@@ -3,7 +3,7 @@
 The DataRole API Client Library enables you to work with DataRole APIs on your server.
 
 ## Requirements ##
-* [PHP 5.4.0 or higher](http://www.php.net/)
+* [PHP 5.5.0 or higher](http://www.php.net/)
 
 ## Developer Documentation ##
 http://developers.datarole.com/api
