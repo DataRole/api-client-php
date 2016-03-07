@@ -1,0 +1,31 @@
+{
+  "name": "datarole/api",
+  "type": "library",
+  "description": "PHP client library for DataRole API",
+  "keywords": ["datarole api"],
+  "homepage": "http://developers.datarole.com/api/php",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Drew Gurley",
+      "email": "drew@datarole.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "guzzlehttp/guzzle": "~6.0",
+    "guzzlehttp/psr7": "1.2.*",
+    "psr/http-message": "1.0.*",
+    "illuminate/support": "~4.1",
+    "siriusphp/validation": "1.2.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.0.*",
+    "mockery/mockery": "~0.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "DataRole\\API\\": "src"
+    }
+  }
+}
