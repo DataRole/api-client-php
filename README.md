@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/DataRole/api-client-php.svg?branch=master)](https://travis-ci.org/DataRole/api-client-php)
+
 # DataRole API Client Library for PHP #
 
 The DataRole API Client Library enables you to work with DataRole APIs on your server.
