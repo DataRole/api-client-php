@@ -43,39 +43,45 @@ class Client
 
     /**
      * @param int|array $params
+     * @param int $limit
+     * @param int $page
      * @return Client $this
      */
-    public function permit($params)
+    public function permit($params, $limit = 25, $page = 0)
     {
         $model         = new Models\Permit();
         $this->dataset = is_array($params)
-            ? $this->connection->post($model, $params) : $this->connection->get($model, $params);
+            ? $this->connection->post($model, $params, $limit, $page) : $this->connection->get($model, $params);
 
         return $this;
     }
 
     /**
      * @param int|array $params
+     * @param int $limit
+     * @param int $page
      * @return Client $this
      */
-    public function property($params)
+    public function property($params, $limit = 25, $page = 0)
     {
         $model         = new Models\Property();
         $this->dataset = is_array($params)
-            ? $this->connection->post($model, $params) : $this->connection->get($model, $params);
+            ? $this->connection->post($model, $params, $limit, $page) : $this->connection->get($model, $params);
 
         return $this;
     }
 
     /**
      * @param int|array $params
+     * @param int $limit
+     * @param int $page
      * @return Client $this
      */
-    public function professional($params)
+    public function professional($params, $limit = 25, $page = 0)
     {
         $model         = new Models\Professional();
         $this->dataset = is_array($params)
-            ? $this->connection->post($model, $params) : $this->connection->get($model, $params);
+            ? $this->connection->post($model, $params, $limit, $page) : $this->connection->get($model, $params);
 
         return $this;
     }

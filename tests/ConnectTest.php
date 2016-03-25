@@ -41,7 +41,7 @@ class ConnectionTest extends PHPUnit_Framework_TestCase
     {
         $model      = new Models\Permit();
         $connection = new Connection(null, new GuzzleStub('./tests/stubs/permits.json'));
-        $response   = $connection->post($model, []);
+        $response   = $connection->post($model, [], 25, 0);
 
         $this->assertInstanceOf('Illuminate\Support\Collection', $response);
     }

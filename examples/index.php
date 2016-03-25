@@ -4,8 +4,7 @@ require_once '../vendor/autoload.php';
 
 $datarole = new DataRole\API\Client(
     [
-        'authorization' => '<YOUR_API_KEY_HERE>',
-        'instance'      => 'default',
+        'authorization' => '_API_TOKEN_',
         'version'       => 'v1',
     ]
 );
@@ -21,7 +20,6 @@ $datarole->permit(2013)->preview();
 //$datarole->permit(['Region' => 'CA_Concord'])->preview();
 
 
-
 ##
 #   Data Preview of a Single Property
 ##
@@ -31,7 +29,6 @@ $datarole->permit(2013)->preview();
 #   Data Preview of a Multiple Properties
 ##
 //$datarole->property(['Region' => 'CA_Concord'])->preview();
-
 
 
 ##
