@@ -6,7 +6,7 @@ The DataRole API Client Library enables you to work with DataRole APIs on your s
 * [PHP 5.4.0 or higher](http://www.php.net/)
 
 ## Developer Documentation ##
-http://developers.datarole.com/api
+https://github.com/DataRole/api
 
 ## Installation ##
 
@@ -32,7 +32,7 @@ require_once '/path/to/your-project/vendor/autoload.php';
 
 ### Download the Release
 
-If you abhor using composer, you can download the package in its entirety. The [Releases](https://github.com/datarole/releases) page lists all stable versions. Download any file
+If you abhor using composer, you can download the package in its entirety. The [Releases](https://github.com/DataRole/api-client-php/releases) page lists all stable versions. Download any file
 with the name for a package including this library and its dependencies.
 
 Uncompress the zip file you download, and include the autoloader in your project:
