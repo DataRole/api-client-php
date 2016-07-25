@@ -28,21 +28,12 @@ class ConnectionTest extends PHPUnit_Framework_TestCase
         $this->assertSame($guzzle1, $guzzle2);
     }
 
-    public function testGetReturnsASingleModel()
+    public function testGetReturnsAModel()
     {
-        $model      = new Models\Permit();
-        $connection = new Connection(null, new GuzzleStub('./tests/stubs/permit.json'));
-        $response   = $connection->get($model, 1);
+        $model      = new Models\Property();
+        $connection = new Connection(null, new GuzzleStub('./tests/stubs/property.json'));
+        $response   = $connection->get('776+Buena+Vista+Ave+Alameda+CA+94501');
 
         $this->assertInstanceOf('DataRole\API\Model', $response);
-    }
-
-    public function testPostReturnsACollection()
-    {
-        $model      = new Models\Permit();
-        $connection = new Connection(null, new GuzzleStub('./tests/stubs/permits.json'));
-        $response   = $connection->post($model, [], 25, 0);
-
-        $this->assertInstanceOf('Illuminate\Support\Collection', $response);
     }
 }

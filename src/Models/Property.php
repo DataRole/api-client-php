@@ -20,6 +20,6 @@ class Property extends Model
      */
     public function hydrate(array $attributes)
     {
-        $this->attributes = isset($attributes['data']) ? $attributes['data']['property'] : @$attributes['property'];
+        $this->attributes = @$attributes['Property'];
     }
 }

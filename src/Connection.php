@@ -24,27 +24,12 @@ class Connection
     protected $options = [];
 
     /**
-     * @var array
-     */
-    protected $response = [];
-
-    /**
-     * @var array
-     */
-    protected $meta = [];
-
-    /**
-     * @var array
-     */
-    protected $pagination = [];
-
-    /**
      * @param object $di Guzzle Dependancy Injection
      * @param array $options
      */
     public function __construct($options, $di = null)
     {
-        $this->options = $options ?: ["authorization" => null, "version" => 'v1'];
+        $this->options = $options ?: ["account" => null, "secret" => null, "version" => 'v2'];
         $this->http    = $di ?: $this->http();
     }
 
@@ -52,49 +37,24 @@ class Connection
      * Fetches a single record via get
      *
      * @param Model $model
-     * @param integer $id
+     * @param string $address
      * @return string
      */
-    public function get($model, $id)
+    public function get($address)
     {
         $payload = json_decode(
             $this
                 ->http
-                ->get("{$model->base()->singular()->lowercase()}/{$id}")
+                ->get("address/{$address}")
                 ->getBody()
                 ->getContents(),
             true
         );
 
-        $this->meta     = $payload['meta'];
-        $this->response = $payload['response'];
-        $normalizer     = new Normalizer($model);
+        $model = new Models\Property();
+        $model->hydrate($payload);
 
-        return $normalizer->model($payload);
-    }
-
-    /**
-     * @param Model $model
-     * @param array $params
-     * @return mixed
-     */
-    public function post($model, $params, $limit, $page)
-    {
-        $payload = json_decode(
-            $this
-                ->http
-                ->post($model->base()->plural()->lowercase()."/{$limit}/{$page}", ['form_params' => $params])
-                ->getBody()
-                ->getContents(),
-            true
-        );
-
-        $this->meta       = $payload['meta'];
-        $this->response   = $payload['response'];
-        $this->pagination = $payload['pagination'];
-        $normalizer       = new Normalizer($model);
-
-        return $normalizer->collection($payload);
+        return $model;
     }
 
     /**
@@ -109,11 +69,11 @@ class Connection
         } else {
             $this->http = new GuzzleHttp\Client(
                 [
+                    'auth'     => [$this->options['account'], $this->options['secret']],
                     'base_uri' => self::BASE_URL."building/{$this->options['version']}/",
                     'headers'  => [
-                        'Accept'                   => 'application/json',
-                        'Content-Type'             => 'application/json',
-                        'X-DataRole-Authorization' => $this->options['authorization'],
+                        'Accept'       => 'application/json',
+                        'Content-Type' => 'application/json',
                     ],
                 ]
             );

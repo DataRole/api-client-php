@@ -2,10 +2,6 @@
 
 namespace DataRole\API;
 
-use Illuminate\Support\Collection;
-
-use DataRole\API\Models;
-
 /**
  * Class Client
  * @package DataRole\API
@@ -20,13 +16,13 @@ class Client
     private $connection;
 
     /**
-     * @var Model|Collection
+     * @var Model
      */
     private $dataset;
 
     /**
      * @param array $options
-     * @param object $di Guzzle Dependancy Injection
+     * @param object $di Guzzle Dependency Injection
      */
     public function __construct(array $options, $di = null)
     {
@@ -34,64 +30,30 @@ class Client
     }
 
     /**
-     * @return Model|Collection
+     * @return Model
      */
-    public function dataset()
+    public function getDataset()
     {
         return $this->dataset;
     }
 
     /**
-     * @param int|array $params
-     * @param int $limit
-     * @param int $page
+     * @param string $address
      * @return Client $this
      */
-    public function permit($params, $limit = 25, $page = 0)
+    public function lookupAddress($address)
     {
-        $model         = new Models\Permit();
-        $this->dataset = is_array($params)
-            ? $this->connection->post($model, $params, $limit, $page) : $this->connection->get($model, $params);
+        $this->dataset = $this->connection->get($address);
 
         return $this;
     }
 
     /**
-     * @param int|array $params
-     * @param int $limit
-     * @param int $page
-     * @return Client $this
-     */
-    public function property($params, $limit = 25, $page = 0)
-    {
-        $model         = new Models\Property();
-        $this->dataset = is_array($params)
-            ? $this->connection->post($model, $params, $limit, $page) : $this->connection->get($model, $params);
-
-        return $this;
-    }
-
-    /**
-     * @param int|array $params
-     * @param int $limit
-     * @param int $page
-     * @return Client $this
-     */
-    public function professional($params, $limit = 25, $page = 0)
-    {
-        $model         = new Models\Professional();
-        $this->dataset = is_array($params)
-            ? $this->connection->post($model, $params, $limit, $page) : $this->connection->get($model, $params);
-
-        return $this;
-    }
-
-    /**
-     * prints a preview or the registered dataset
+     * prints a preview of the registered dataset
      *
      * @codeCoverageIgnore
      */
-    public function preview()
+    public function printPreview()
     {
         ini_set('xdebug.var_display_max_depth', -1);
         ini_set('xdebug.var_display_max_children', -1);

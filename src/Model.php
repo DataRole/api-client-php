@@ -2,9 +2,6 @@
 
 namespace DataRole\API;
 
-use DataRole\API\Meta;
-use DataRole\API\Traits;
-
 /**
  * Class Model
  * @package DataRole\API
@@ -20,16 +17,6 @@ abstract class Model
      * @var array
      */
     protected $mutable = [];
-
-    /**
-     * Return the base meta class
-     *
-     * @return Meta\Base
-     */
-    public function base()
-    {
-        return new Meta\Base($this);
-    }
 
     /**
      * Force hydration of the entity with an array of attributes.

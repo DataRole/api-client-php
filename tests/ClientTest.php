@@ -11,28 +11,12 @@ class ClientTest extends PHPUnit_Framework_TestCase
         new DataRole\API\Client(null);
     }
 
-    public function testPermitReturnsSinglePermitModel()
-    {
-        $client = new DataRole\API\Client([], new GuzzleStub('./tests/stubs/permit.json'));
-        $client->permit(1);
-
-        $this->assertInstanceOf('DataRole\API\Models\Permit', $client->dataset());
-    }
-
-    public function testPropertyReturnsSinglePropertyModel()
+    public function testPermitReturnsModel()
     {
         $client = new DataRole\API\Client([], new GuzzleStub('./tests/stubs/property.json'));
-        $client->property(1);
+        $client->lookupAddress('776+Buena+Vista+Ave+Alameda+CA+94501');
 
-        $this->assertInstanceOf('DataRole\API\Models\Property', $client->dataset());
-    }
-
-    public function testProfessionalReturnsSingleProfessionalModel()
-    {
-        $client = new DataRole\API\Client([], new GuzzleStub('./tests/stubs/professional.json'));
-
-        $client->professional(1);
-        $this->assertInstanceOf('DataRole\API\Models\Professional', $client->dataset());
+        $this->assertInstanceOf('DataRole\API\Models\Property', $client->getDataset());
     }
 }
 

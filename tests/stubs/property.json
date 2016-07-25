@@ -1,24 +1,9 @@
 {
-  "response": {
-    "code": 200,
-    "error": 0,
-    "message": "OK"
-  },
-  "meta": {
-    "datatype": "property",
-    "datetime": {
-      "date": "2016-03-04 10:53:46.000000",
-      "timezone_type": 3,
-      "timezone": "America\/New_York"
-    },
-    "request": {
-      "id": "1"
-    }
-  },
-  "pagination": null,
-  "data": {
-    "property": {
-      "Id": 1
+  "Property": {
+    "Address": {},
+    "Auditor": {},
+    "Permits": {
+      "Professionals": {}
     }
   }
 }

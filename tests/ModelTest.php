@@ -59,33 +59,6 @@ class ModelTest extends PHPUnit_Framework_TestCase
     {
         $value = $this->model->invalidAtrribute;
     }
-
-    public function testGetPluralEntityName()
-    {
-        $this->assertEquals('modelstubs', $this->model->base()->lowercase()->plural());
-        $this->assertEquals('MODELSTUBS', $this->model->base()->uppercase()->plural());
-        $this->assertEquals('ModelStubs', $this->model->base()->plural());
-    }
-
-    public function testGetLowercaseSingularEntityName()
-    {
-        $this->assertEquals('modelstub', $this->model->base()->lowercase()->singular());
-        $this->assertEquals('MODELSTUB', $this->model->base()->uppercase()->singular());
-        $this->assertEquals('ModelStub', $this->model->base()->singular());
-    }
-
-    /*
-    public function testValidatingFailsWithMissingRequiredField()
-    {
-        $this->assertFalse($this->model->validate());
-    }
-
-    public function testValidatingPassesWithRequiredField()
-    {
-        $this->model->updatedAt = 'date';
-        $this->assertTrue($this->model->validate());
-    }
-    */
 }
 
 class ModelStub extends DataRole\API\Model

@@ -4,39 +4,15 @@ require_once '../vendor/autoload.php';
 
 $datarole = new DataRole\API\Client(
     [
-        'authorization' => '_API_TOKEN_',
-        'version'       => 'v1',
+        'account' => '__ACCOUNT__',
+        'secret'  => '__SECRET__',
+        'version' => 'v2',
     ]
 );
 
 ##
-#   Data Preview of a Single Permit
+#   Data Preview of an Address
 ##
-$datarole->permit(2013)->preview();
-
-##
-#   Data Preview of a Multiple Permits
-##
-//$datarole->permit(['Region' => 'CA_Concord'])->preview();
-
-
-##
-#   Data Preview of a Single Property
-##
-//$datarole->property(1524)->preview();
-
-##
-#   Data Preview of a Multiple Properties
-##
-//$datarole->property(['Region' => 'CA_Concord'])->preview();
-
-
-##
-#   Data Preview of a Single Professional
-##
-//$datarole->professional(1052)->preview();
-
-##
-#   Data Preview of a Multiple Professionals
-##
-//$datarole->professional(['Region' => 'CA_Concord'])->preview();
+$datarole
+    ->lookupAddress('776+Buena+Vista+Ave+Alameda+CA+94501')
+    ->printPreview();
