@@ -59,11 +59,14 @@ And then browsing to the host and port you specified
 require_once 'vendor/autoload.php';
 
 $client = new DataRole\API\Client([
-    'authorization' => '_API_TOKEN_',
-    'version'       => 'v1',
+    'account' => '__ACCOUNT__',
+    'secret'  => '__SECRET__',
+    'version' => 'v2',
 ]);
 
-$client->permit(['Region' => 'CA_Concord'])->preview();
+$client
+    ->lookupAddress('776+Buena+Vista+Ave+Alameda+CA+94501')
+    ->printPreview();
 ```
 
 ## Frequently Asked Questions ##
