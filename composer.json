@@ -1,5 +1,5 @@
 {
-  "name": "datarole/api",
+  "name": "datarole/api-client-php",
   "type": "library",
   "description": "PHP client library for DataRole API",
   "keywords": ["datarole api"],
