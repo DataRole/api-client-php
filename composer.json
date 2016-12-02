@@ -16,7 +16,7 @@
     "guzzlehttp/guzzle": "~6.0",
     "guzzlehttp/psr7": "1.2.*",
     "psr/http-message": "1.0.*",
-    "datarole/api-client-php": "dev-master"
+    "datarole/api-client-php": "~2.0"
   },
   "require-dev": {
     "phpunit/phpunit": "4.0.*",
