@@ -44,7 +44,7 @@ require_once '/path/to/datarole-api-php-client/vendor/autoload.php';
 For additional installation and setup instructions, see [the documentation](https://github.com/datarole/api/blob/master/sdks/php.md#installation).
 
 ## Basic Example ##
-Begin by editing the examples/index.php directory to test your access to the system. 
+Begin by editing the examples/index.php file and replacing the placeholder text with your provided account and secret keys.  If you want to test a specific address, just replace the default address in the lookupAddress() function. 
 
 ```PHP
 // include your composer dependencies
