@@ -8,9 +8,7 @@ The DataRole API Client Library enables you to work with DataRole APIs on your s
 ## Developer Documentation ##
 https://github.com/DataRole/api
 
-## Installation ##
-
-You can simply **Download the Release**
+## Getting Started ##
 
 ### Download the Release
 
