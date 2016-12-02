@@ -44,15 +44,7 @@ require_once '/path/to/datarole-api-php-client/vendor/autoload.php';
 For additional installation and setup instructions, see [the documentation](https://github.com/datarole/api/blob/master/sdks/php.md#installation).
 
 ## Basic Example ##
-See the examples/ directory for examples of the key client features. You can
-view them in your browser by running the php built-in web server.
-
-```
-$ php -S localhost:8000 -t examples/
-```
-
-And then browsing to the host and port you specified
-(in the above example, `http://localhost:8000`).
+Begin by editing the examples/index.php directory to test your access to the system. 
 
 ```PHP
 // include your composer dependencies
@@ -67,6 +59,12 @@ $client = new DataRole\API\Client([
 $client
     ->lookupAddress('776+Buena+Vista+Ave+Alameda+CA+94501')
     ->printPreview();
+```
+
+You can then view the result in your browser by running the php built-in web server and then browsing to the host and port you specified (ie: `http://localhost:8000`).
+
+```
+$ php -S localhost:8000 -t examples/
 ```
 
 ## Frequently Asked Questions ##
@@ -89,7 +87,7 @@ Run the PHPUnit tests with PHPUnit.
 
 ## License ##
 
-Copyright 2016 HireWheel, LLC
+Copyright 2016 DataRole, LLC
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
