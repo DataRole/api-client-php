@@ -10,30 +10,11 @@ https://github.com/DataRole/api
 
 ## Installation ##
 
-You can use **Composer** or simply **Download the Release**
-
-### Composer
-
-The preferred method is via [composer](https://getcomposer.org). Follow the
-[installation instructions](https://getcomposer.org/doc/00-intro.md) if you do not already have
-composer installed.
-
-Once composer is installed, execute the following command in your project root to install this library:
-
-```sh
-composer require datarole/api
-```
-
-Finally, be sure to include the autoloader:
-
-```php
-require_once '/path/to/your-project/vendor/autoload.php';
-```
+You can simply **Download the Release**
 
 ### Download the Release
 
-If you abhor using composer, you can download the package in its entirety. The [Releases](https://github.com/DataRole/api-client-php/releases) page lists all stable versions. Download any file
-with the name for a package including this library and its dependencies.
+You can download the package in its entirety. The [Releases](https://github.com/DataRole/api-client-php/releases) page lists all stable versions. Download any file with the name for a package including this library and its dependencies.
 
 Uncompress the zip file you download, and include the autoloader in your project:
 
